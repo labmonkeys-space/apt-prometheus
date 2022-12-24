@@ -1,0 +1,7 @@
+APT::Update::Post-Invoke-Success {
+  "/usr/share/apt-metrics.sh | sponge /var/lib/node_exporter/textfile_collector/apt.prom || true"
+};
+
+DPkg::Post-Invoke {
+  "/usr/share/apt-metrics.sh | sponge /var/lib/node_exporter/textfile_collector/apt.prom || true"
+};
